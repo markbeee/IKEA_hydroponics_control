@@ -9,4 +9,8 @@ Control growth with microcontroller/ embedded system and sensors (light, humidit
 
 Day 0 (initial seed)
 
-![image](/images/Day0_git_800w.jpg)
+![Initial seed day 0](/images/Day0_git_800w.jpg)
+
+Day 3
+
+![Seed day 3](/images/Day3_git_slant.jpg)
