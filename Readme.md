@@ -19,3 +19,8 @@ Day 6
 (Parsley looks like it's dead seed)
 
 ![Seed day 6](/images/Day6_git_slant.jpg)
+
+Day 0 (in a new home)
+Seedlings moved to cultivation unit
+
+![Cultivation day 0](/images/Day0_git_grow.jpg)
