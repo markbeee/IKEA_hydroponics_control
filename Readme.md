@@ -12,7 +12,7 @@ You can find an [example sketch and the library here](https://github.com/markbee
 BH1750FVI connected to a ESP12 breadboard adapter board
 (see my project [ESP8266 breadboard adapter board](https://github.com/markbeee/ESP8266_Breakout_Board))
 
-![BH1750FVI breadboard setup with ESP8266](https://github.com/markbeee/BH1750FVI/images/BH1750FVI.jpg)
+![BH1750FVI breadboard setup with ESP8266](/images/BH1750FVI.jpg)
 
 #### Pictures from the seed and growth
 
