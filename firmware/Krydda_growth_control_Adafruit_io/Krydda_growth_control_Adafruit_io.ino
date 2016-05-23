@@ -1,5 +1,5 @@
-/************************************************************************
-  Example sketch for IKEA Krydda growth control system
+/**********************************************************************************
+  Example sketch for IKEA Krydda growth control
   With web dashboard at io.adafruit.com
   Works with Arduino, ESP8266
   Sensors:
@@ -10,21 +10,17 @@
   github@tradewire.de
   23-5-2016
 
-  Libraries needed to install:
   BH1750FVI light sensor library: https://github.com/markbeee/BH1750FVI
-  Adafruit MQTT library https://github.com/adafruit/Adafruit_MQTT_Library
+  SHT21 temperature and humidity sensor library https://github.com/markbeee/SHT21
+***********************************************************************************/
 
-  Demo dashboard on adafruit io: https://io.adafruit.com/markb2
-**************************************************************************/
-
-// Libraries
-#include <ESP8266WiFi.h> // ESP WiFi library
+#include <ESP8266WiFi.h>
 #include <Wire.h> // I2C Arduino library
-#include "Adafruit_MQTT.h" // Adafruit MQTT library
+#include "Adafruit_MQTT.h"
 #include "Adafruit_MQTT_Client.h"
 #include "BH1750FVI.h" // BH1750FVI Light sensor library
+#include "SHT21.h" // SHT21 Temperature and Humidity sensor
 
-// Defines
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  1883
 #define AIO_USERNAME    "username_adafruit_io" // put in your username for adafruit.io
@@ -35,7 +31,7 @@ const char* ssid     = "yourSSID"; // put in your WiFi SSID
 const char* password = "yourWiFiPassword"; // put in your WiFi password
 
 // Functions
-void connect(); // Function for connecting to Adafruit IO
+void connect();
 
 // Create an ESP8266 WiFiClient class to connect to the MQTT server.
 WiFiClient client;
@@ -55,11 +51,22 @@ Adafruit_MQTT_Client mqtt(&client, MQTT_SERVER, AIO_SERVERPORT, MQTT_CLIENTID, M
 
 /****************************** Feeds ***************************************/
 
-const char AMBIENT_LIGHT[] PROGMEM = AIO_USERNAME "/feeds/Ambient_Light";
-Adafruit_MQTT_Publish ambientLight1 = Adafruit_MQTT_Publish(&mqtt, AMBIENT_LIGHT);
+const char AMBIENT_LIGHT_1[] PROGMEM = AIO_USERNAME "/feeds/Ambient_Light_1";
+Adafruit_MQTT_Publish ambientLight1 = Adafruit_MQTT_Publish(&mqtt, AMBIENT_LIGHT_1);
+
+const char TEMPERATURE_1[] PROGMEM = AIO_USERNAME "/feeds/Temperature_1";
+Adafruit_MQTT_Publish temperature1 = Adafruit_MQTT_Publish(&mqtt, TEMPERATURE_1);
+
+const char HUMIDITY_1[] PROGMEM = AIO_USERNAME "/feeds/Humidity_1";
+Adafruit_MQTT_Publish humidity1 = Adafruit_MQTT_Publish(&mqtt, HUMIDITY_1);
+
 
 BH1750FVI LightSensor;
 int lux;
+
+SHT21 SHT21;
+float temperature;
+float humidity;
 
 void setup() {
 
@@ -68,6 +75,8 @@ void setup() {
   LightSensor.begin();
   LightSensor.setMode(Continuously_High_Resolution_Mode); // see datasheet page 5 for modes
 
+  SHT21.begin();
+  
   Serial.println("Light sensor BH1750FVI found and running");
 
   // We start by connecting to a WiFi network
@@ -103,19 +112,42 @@ void loop() {
   }
 
   lux = LightSensor.getAmbientLight();
-
+    
   // Debugging
   Serial.print("Ambient light intensity: ");
   Serial.print(lux);
   Serial.println(" lux");
 
-  // Publish data
+  temperature = SHT21.getTemperature();
+  humidity = SHT21.getHumidity();
+  
+  // Debugging
+  Serial.print("Temperature(C): ");
+  Serial.println(temperature);
+  Serial.print("Humidity(%RH): ");
+  Serial.println(humidity);
+
+  // Publish ambient light value
   if (! ambientLight1.publish(lux)) {
     Serial.println(F("Failed"));
   } else {
     Serial.println(F("OK!"));
   }
 
+  // Publish temperature
+  if (! temperature1.publish(temperature)) {
+    Serial.println(F("Failed"));
+  } else {
+    Serial.println(F("OK!"));
+  }
+
+  // Publish humidity
+  if (! humidity1.publish(humidity)) {
+    Serial.println(F("Failed"));
+  } else {
+    Serial.println(F("OK!"));
+  }
+  
   delay(10000);
 
 }
