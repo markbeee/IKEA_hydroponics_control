@@ -1,19 +1,29 @@
-Project to control IKEA hydroponics Krydda/ Växer
+##Project to control IKEA hydroponics Krydda/ Växer
 
-#### Planned items:
+#### Planned items
 
 Control growth with microcontroller/ embedded system and sensors (light, humidity, temperature, CO2, water level etc.)  utilizing automated lighting and water refill with the new IKEA Krydda/ Växer system.
 
 ##### Sensors
 
-I added the first sensor to the project. It is a light sensor (BH1750FVI) which will monitor the amount of light the plants accumulate over the day. To save energy I will only switch on the lights as long as necessary if ambient light (sunlight) is available.
+I added the first sensor to the project. It is a light sensor (BH1750FVI) which will monitor the amount of light the plants accumulate over the day. To save energy in the future I will only switch on the lights as long as necessary if ambient light (sunlight) is available.
 You can find an [example sketch and the library here](https://github.com/markbeee/BH1750FVI). The light sensor on a breakout board is available on Ebay, Aliexpress etc.
 
-BH1750FVI connected to a ESP12 breadboard adapter board
+BH1750FVI connected to an ESP8266 (ESP-12) breadboard adapter board
 (see my project [ESP8266 breadboard adapter board](https://github.com/markbeee/ESP8266_Breakout_Board))
 
 ![BH1750FVI breadboard setup with ESP8266](/images/BH1750FVI.jpg)
 
+#### Firmware sketch for ESP8266 with web dashboard on adafruit.io
+
+To monitor your cultivation unit from local/ everywhere I wrote a [sketch](/firmware/Krydda_growth_control_Adafruit_io.ino) to both send the actual values via the serial port and to adafruit.io which is a nice web service for displaying data in the internet (of things).
+
+Demo-Dashboard of my [Krydda system](https://io.adafruit.com/markb2) 
+
+![Adafruit.io dashboard](/images/Adafruit_io_dashboard.jpg)
+
+You can get more information on how to set up your own dashboard on adafruit.io [here](https://io.adafruit.com/)
+ 
 #### Pictures from the seed and growth
 
 | Parsley | Pak Choi | Chard | White cabbage | Rocket | Large-leaved chicory | Curled-leaved endive | Parsley | Watercress | Basil |
@@ -28,7 +38,7 @@ Day 3
 ![Seed day 3](/images/Day3_git_slant.jpg)
 
 Day 6
-(Parsley looks like it's dead seed)
+~~(Parsley looks like it's dead seed)~~ Parsley needs much more time to germinate - RTFM! (about 14 days)
 
 ![Seed day 6](/images/Day6_git_slant.jpg)
 
