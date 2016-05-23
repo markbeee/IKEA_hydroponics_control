@@ -4,6 +4,7 @@
   Works with Arduino, ESP8266
   Sensors:
   BH1750FVI light sensor
+  SHT21 temperature and humidity sensor
 
   Markus Ulsass
   Hamburg, Germany
