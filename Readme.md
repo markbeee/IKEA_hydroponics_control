@@ -16,7 +16,7 @@ BH1750FVI connected to an ESP8266 (ESP-12) breadboard adapter board
 
 #### Firmware sketch for ESP8266 with web dashboard on adafruit.io
 
-To monitor your cultivation unit from local/ everywhere I wrote a [sketch](/firmware/Krydda_growth_control_Adafruit_io.ino) to both send the actual values via the serial port and to adafruit.io which is a nice web service for displaying data in the internet (of things).
+To monitor your cultivation unit from local/ everywhere I wrote a [sketch](https://github.com/markbeee/firmware/Krydda_growth_control_Adafruit_io.ino) to both send the actual values via the serial port and to adafruit.io which is a nice web service for displaying data in the internet (of things).
 
 Demo-Dashboard of my [Krydda system](https://io.adafruit.com/markb2) 
 
