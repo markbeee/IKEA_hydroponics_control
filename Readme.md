@@ -6,7 +6,9 @@ Control growth with microcontroller/ embedded system and sensors (light, humidit
 
 ##### Sensors
 
-1. Light sensor (BH1750FVI): Monitors the amount of light the plants accumulate over the day. To save energy in the future I will only switch on the lights as long as necessary if ambient light (sunlight) is available.
+######Light sensor (BH1750FVI)######
+
+Monitors the amount of light the plants accumulate over the day. To save energy in the future I will only switch on the lights as long as necessary if ambient light (sunlight) is available.
 You can find an [example sketch and the library for BH1750FVI here](https://github.com/markbeee/BH1750FVI). The light sensor on a breakout board is available on Ebay, AliExpress etc.
 
 BH1750FVI connected to an ESP8266 (ESP-12) breadboard adapter board
@@ -14,7 +16,9 @@ BH1750FVI connected to an ESP8266 (ESP-12) breadboard adapter board
 
 ![BH1750FVI breadboard setup with ESP8266](/images/BH1750FVI.jpg)
 
-2. Temperature and humidity sensor Sensirion SHT21: Monitors the actual environment values of temperature and humidity. Might be helpful if one of the values gets out of the comfort envelope for the plants.
+######Temperature and humidity sensor Sensirion SHT21######
+
+Monitors the actual environment values of temperature and humidity. Might be helpful if one of the values gets out of the comfort envelope for the plants.
 You can find an [example sketch and the library for SHT21 here](https://github.com/markbeee/SHT21). The sensor on a breakout board is available on Ebay, AliExpress etc.
 
 #### Firmware sketch for ESP8266 with web dashboard on adafruit.io
@@ -49,3 +53,7 @@ Day 0 (in a new home)
 Seedlings moved to cultivation unit
 
 ![Cultivation day 0](/images/Day0_git_grow.jpg)
+
+Day 12 in cultivation unit
+![Cultivation day 12](/images/Day18_2_3_4_5_labeled_blog.jpg)
+![Cultivation day 12](/images/Day18_6_7_9_10_labeled_blog.jpg)
