@@ -15,6 +15,7 @@ BH1750FVI connected to an ESP8266 (ESP-12) breadboard adapter board
 (see my project [ESP8266 breadboard adapter board](https://github.com/markbeee/ESP8266_Breakout_Board))
 
 ![BH1750FVI breadboard setup with ESP8266](/images/BH1750FVI.jpg)
+![Sensors on cultivation unit](/images/Sensors_ESP8266.jpg)
 
 ######Temperature and humidity sensor Sensirion SHT21######
 
