@@ -58,3 +58,7 @@ Seedlings moved to cultivation unit
 Day 12 in cultivation unit
 ![Cultivation day 12](/images/Day18_2_3_4_5_labeled_blog.jpg)
 ![Cultivation day 12](/images/Day18_6_7_9_10_labeled_blog.jpg)
+
+Day 30 in cultivation unit
+![Cultivation day 30](/images/Day30.jpg)
+Chicory, endive, parsley and basil almost ready to harvest!
